@@ -1,0 +1,64 @@
+.home-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px;
+}
+
+.home-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-header-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.home-card {
+    height: 670px;
+    padding: 0 .5em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    background-color: #4b4b4b;
+    border-radius: 10px;
+}
+
+.home-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.home-actions {
+    margin: .4em auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.home-actions > ion-button {
+    height: auto;
+    --border-radius: 50%;
+}
+
+.home-small-btn {
+    --padding-start: 10px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    --padding-end: 10px;
+}
+
+.home-large-btn {
+    --padding-start: 15px;
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+    --padding-end: 15px;
+}

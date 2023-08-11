@@ -1,0 +1,20 @@
+.sign-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2em 0;
+}
+
+.sign-title {
+    margin-top: 2em;
+    margin-bottom: 8em;
+
+    text-align: center;
+    font-size: 2rem;
+}
+
+.sign-content {
+    display: grid;
+    gap: 0.5em;
+}
