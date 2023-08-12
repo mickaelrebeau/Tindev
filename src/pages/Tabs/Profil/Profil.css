@@ -14,7 +14,7 @@
 
 .profil-header-btn {
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 .profil-content {
@@ -52,4 +52,55 @@
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.edit-content {
+    padding-bottom: 2em;
+}
+
+.edit-content-input {
+    margin-bottom: 3em;
+}
+
+.edit-content-input h2 {
+    margin-bottom: 1em;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.edit-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.edit-card-img {
+    width: 105px;
+    height: 180px;
+
+    position: relative;
+
+    border: 3px dashed rgb(107, 107, 107);
+    border-radius: 10px;
+
+    background-color: rgb(202, 202, 202);
+}
+
+.edit-card-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(20%, 20%);
+}
+
+.edit-btn-icon {
+    margin: 0;
+
+    width: 40px;
+    height: 40px;
+
+    --border-radius: 50%;
 }

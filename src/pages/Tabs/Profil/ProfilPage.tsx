@@ -30,7 +30,7 @@ export default function ProfilPage() {
       <IonContent className="ion-padding">
         <div className="profil-content">
           <div className="profil-edit-btn">
-            <IonButton size="small">
+            <IonButton size="small" routerLink="/tabs/profil/edit">
               <IonIcon icon={pen}></IonIcon>
             </IonButton>
           </div>

@@ -8,6 +8,7 @@ import profil from '../../assets/person-outline.svg';
 
 import MessagesPage from "../../pages/Tabs/Messages/MessagesPage";
 import ProfilPage from "../../pages/Tabs/Profil/ProfilPage";
+import ProfilEditPage from "../../pages/Tabs/Profil/ProfilEditPage";
 import HomePage from "../../pages/Tabs/Home/HomePage";
   
   
@@ -21,6 +22,7 @@ import HomePage from "../../pages/Tabs/Home/HomePage";
           <Route exact path="/tabs/home" component={HomePage} />
           
           <Route exact path="/tabs/profil" component={ProfilPage} />
+          <Route exact path="/tabs/profil/edit" component={ProfilEditPage} />
     
           <Route exact path="/tabs">
             <Redirect to="/tabs/home"></Redirect>
