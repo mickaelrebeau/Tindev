@@ -1,21 +1,22 @@
 # Tindev
-    Fonctionnabilités Back-end
+## Fonctionnabilités
 - Swipe
 - Messages
 - Profil
 - Auth
 ---
 
-    L'Auth
-#### Pour se connecter il y aura trois moyen:
+## L'Auth
+#### Pour se connecter il y aura deux moyens:
 - Avec un compte Google
-- Avec son adresse Email ( ici un code est envoyé par email )
-- Avec son numéro de Téléphone ( ici un code est envoyé par sms )
-  
-  ![Capture_decran_2023-08-10_225945](https://github.com/mickaelrebeau/Tindev/assets/75978618/624eaec8-c037-47c2-8def-a928283694c3)
+- Avec son adresse Email ( email/mot de passe)
+
+  ![image](https://github.com/mickaelrebeau/Tindev/assets/75978618/35fa5f51-bbaa-4e09-aa77-7e312e64ccbb)
+  ![image](https://github.com/mickaelrebeau/Tindev/assets/75978618/63b5bfec-ef5d-4129-89b8-1b14608d5806)
+
 ---
 
-    Le Profil
+## Le Profil
 #### Voici la liste des données d'un utilisateur:
 - Son pseudo ( obligatoire )
 - Son nom ( facultatif )
@@ -31,9 +32,13 @@
 - Son github ( facultatif )
 - Son porfolio ( facultatif )
 - Son discord ( facultatif )
+
+  ![image](https://github.com/mickaelrebeau/Tindev/assets/75978618/a1e1442e-f5a8-4c0f-889a-5073d0441acd)
+  ![image](https://github.com/mickaelrebeau/Tindev/assets/75978618/b86a7d1e-b57d-4b5d-9c1b-b2373809e3db)
+
 ---
 
-    Les messages
+## Les messages
 #### Accès aux messages
 
 - L'utilisateur doit pouvoir voir ses nouveaux matchs et ses nouveaux likes
@@ -41,17 +46,21 @@
 - Option de supprimer ses messages ( voir de les éditer )
 - Possibilité de Bloqué, Supprimer ou signalé un match
 
-    ![image](https://github.com/mickaelrebeau/Tindev/assets/75978618/34fbdb20-ff4d-4541-a592-7dde57a61685)
+    ![image](https://github.com/mickaelrebeau/Tindev/assets/75978618/09796bd8-25a4-4067-aebc-7df1d6ece950)
+    ![image](https://github.com/mickaelrebeau/Tindev/assets/75978618/b266f8cd-fc21-4331-948a-2c4bb52dd21f)
 ---
 
-    Les Swipes
+## Les Swipes
 #### Fonction principal
 
 - L'utilisateur peut cliquer pour skipper un profil
-- L'utilisateur peut cliquer pour envoyer un like
-- L'utilisateur peut cliquer pour envoyer un Superlike
 - L'utilisateur peut cliquer pour signaler un profil
-- L'utilisateur paut cliquer pour revenir en arrière sur un profil
+- L'utilisateur peut cliquer pour envoyer un like
 
-  ![image](https://github.com/mickaelrebeau/Tindev/assets/75978618/df9dc958-0c59-42ed-bef2-e73501f7df09)
+  ![image](https://github.com/mickaelrebeau/Tindev/assets/75978618/c5560acc-fd8b-4a47-aebe-d0a05b688d69)
+  ![image](https://github.com/mickaelrebeau/Tindev/assets/75978618/a0761a44-ef04-441e-bbfc-74ae65ff6764)
+
+
+
+
 
