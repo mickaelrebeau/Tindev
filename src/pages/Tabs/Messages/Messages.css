@@ -62,3 +62,15 @@
 
     padding: 8px 0;
 }
+
+.msg-modal {
+    margin-left: 1em;
+}
+
+.msg-modal h2 {
+    margin: 0;
+
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}

@@ -1,11 +1,14 @@
-import { IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react";
+import { IonButton, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonModal, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react";
 import flamme from '../../../assets/flame-outline.svg'
 import shield from '../../../assets/shield-half-outline.svg'
 import certif from '../../../assets/medical.svg'
 import send from '../../../assets/arrow-undo-outline.svg'
 import './Messages.css'
+import { useRef } from "react";
 
 export default function MessagesPage() {
+  const modal = useRef<HTMLIonModalElement>(null);
+
   return (
     <>
       <IonHeader>
@@ -17,7 +20,9 @@ export default function MessagesPage() {
               <h2>tindev</h2>
             </div>
 
-            <IonIcon slot="start" size="large" icon={shield}></IonIcon>
+            <IonButton id="open-modal" fill="clear">
+              <IonIcon slot="start" icon={shield}></IonIcon>
+            </IonButton>
           </div>
         </IonToolbar>
 
@@ -72,6 +77,18 @@ export default function MessagesPage() {
           </IonList>
         </div>
       </IonContent>
+
+      <IonModal ref={modal} trigger="open-modal" initialBreakpoint={0.25} breakpoints={[0, 0.25]}>
+        <IonContent className="ion-padding">
+          <h2>Sécurité</h2>
+          <IonButton fill="clear" size="large" routerLink="/tabs/profil/security">
+            <IonIcon slot="start" size="large" icon={shield}></IonIcon>
+            <div className="msg-modal">
+              <h2>Paramètres de sécurité</h2>
+            </div>
+          </IonButton>
+        </IonContent>
+      </IonModal> 
     </>
   );
 }
