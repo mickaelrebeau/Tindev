@@ -25,6 +25,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import Tabs from './services/utils/Tabs';
 import SignPage from './pages/Sign/SignPage';
+import LoginPage from './pages/Sign/LoginPage';
 
 setupIonicReact();
 
@@ -34,6 +35,7 @@ const App: React.FC = () => (
       <IonRouterOutlet>
         
         <Route exact path="/" component={SignPage} />
+        <Route exact path="/login" component={LoginPage} />
         
         <Route path="/tabs">
           <Tabs />

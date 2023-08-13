@@ -27,14 +27,9 @@ export default function SignPage() {
             Connexion avec google
           </IonButton>
 
-          <IonButton shape="round" expand="block" routerLink="/tabs/home">
+          <IonButton shape="round" expand="block" routerLink="/login">
             <IonIcon slot="start" icon={email}></IonIcon>
             Connexion avec un email
-          </IonButton>
-
-          <IonButton shape="round" expand="block" routerLink="/tabs/home">
-            <IonIcon slot="start" icon={tel}></IonIcon>
-            Connexion avec un numéro
           </IonButton>
 
           <IonButton fill="clear" expand="block">Problème de connexion ?</IonButton>
