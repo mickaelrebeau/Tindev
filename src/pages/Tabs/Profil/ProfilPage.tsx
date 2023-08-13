@@ -3,7 +3,6 @@ import flamme from '../../../assets/flame-outline.svg'
 import shield from '../../../assets/shield-half-outline.svg'
 import settings from '../../../assets/settings-outline.svg'
 import pen from '../../../assets/pencil-outline.svg'
-import certif from '../../../assets/medical.svg'
 import './Profil.css'
 
 export default function ProfilPage() {
@@ -19,8 +18,12 @@ export default function ProfilPage() {
             </div>
 
             <div className="profil-header-btn">
-              <IonIcon slot="start" size="large" icon={shield}></IonIcon>
-              <IonIcon slot="start" size="large" icon={settings}></IonIcon>
+              <IonButton fill="clear" routerLink="/tabs/profil/security">
+                <IonIcon slot="icon-only" icon={shield}></IonIcon>
+              </IonButton>
+              <IonButton fill="clear" routerLink="/tabs/profil/settings">
+                <IonIcon slot="icon-only" icon={settings}></IonIcon>
+              </IonButton>
             </div>
           </div>
         </IonToolbar>
@@ -35,10 +38,7 @@ export default function ProfilPage() {
             </IonButton>
           </div>
           <img className="profil-img" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <h2 className="profil-title">
-            Admin, 99
-            <IonIcon slot="end" icon={certif}></IonIcon>
-          </h2>
+          <h2>Admin, 99</h2>
         </div>
       </IonContent>
     </>

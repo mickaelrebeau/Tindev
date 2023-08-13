@@ -10,6 +10,9 @@ import MessagesPage from "../../pages/Tabs/Messages/MessagesPage";
 import ProfilPage from "../../pages/Tabs/Profil/ProfilPage";
 import ProfilEditPage from "../../pages/Tabs/Profil/ProfilEditPage";
 import HomePage from "../../pages/Tabs/Home/HomePage";
+import NotificationsPage from "../../pages/Tabs/Home/NotificationsPage";
+import SecurityPage from "../../pages/Security/SecurityPage";
+import SettingsPage from "../../pages/Settings/SettingsPage";
   
   
   const Tabs: React.FC = () => {
@@ -20,9 +23,12 @@ import HomePage from "../../pages/Tabs/Home/HomePage";
           <Route exact path="/tabs/messages" component={MessagesPage} />
   
           <Route exact path="/tabs/home" component={HomePage} />
+          <Route exact path="/tabs/home/notifications" component={NotificationsPage} />
           
           <Route exact path="/tabs/profil" component={ProfilPage} />
           <Route exact path="/tabs/profil/edit" component={ProfilEditPage} />
+          <Route exact path="/tabs/profil/security" component={SecurityPage} />
+          <Route exact path="/tabs/profil/settings" component={SettingsPage} />
     
           <Route exact path="/tabs">
             <Redirect to="/tabs/home"></Redirect>
