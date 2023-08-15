@@ -1,24 +1,10 @@
-import {
-    IonBackButton,
-    IonButton,
-    IonButtons,
-    IonCheckbox,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonInput,
-    IonItem,
-    IonLabel,
-    IonSegment,
-    IonSegmentButton,
-    IonToolbar,
-  } from "@ionic/react";
-  import { InputChangeEventDetail, IonInputCustomEvent } from "@ionic/core";
-  
-  import { useState } from "react";
-  
-  import flamme from '../../assets/flame-outline.svg'
-  import "./Sign.css";
+import { IonBackButton, IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonSegment, IonSegmentButton } from "@ionic/react";
+import { InputChangeEventDetail, IonInputCustomEvent } from "@ionic/core";
+
+import { useState } from "react";
+
+import flamme from '../../assets/flame-outline.svg'
+import "./Sign.css";
   
   export default function LoginPage() {
   

@@ -1,8 +1,7 @@
 import { IonButton, IonContent, IonHeader, IonIcon, IonTitle, IonToolbar } from "@ionic/react";
-import google from '../../assets/logo-google.svg'
-import email from '../../assets/mail-outline.svg'
-import tel from '../../assets/call-outline.svg'
+import github from '../../assets/logo-github.svg'
 import flamme from '../../assets/flame-outline.svg'
+import email from '../../assets/mail-outline.svg'
 import './Sign.css'
 
 export default function SignPage() {
@@ -22,14 +21,15 @@ export default function SignPage() {
         <h2 className="sign-title">Tout commence par du code</h2>
 
         <div className="sign-content">
-          <IonButton fill="outline" shape="round" expand="block" routerLink="/tabs/home">
-            <IonIcon slot="start" icon={google}></IonIcon>
-            Connexion avec google
+
+          <IonButton shape="round" expand="block" routerLink="/tabs/home">
+            <IonIcon slot="start" icon={github}></IonIcon>
+            Connexion avec Github
           </IonButton>
 
-          <IonButton shape="round" expand="block" routerLink="/login">
+          <IonButton fill="outline" shape="round" expand="block" routerLink="/login">
             <IonIcon slot="start" icon={email}></IonIcon>
-            Connexion avec un email
+            Connexion avec un Email
           </IonButton>
 
           <IonButton fill="clear" expand="block">Problème de connexion ?</IonButton>
