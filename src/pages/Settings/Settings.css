@@ -1,0 +1,23 @@
+.settings-content {
+    display: grid;
+    gap: 1em;
+
+    margin-bottom: 2em;
+}
+
+.settings-card {
+    display: grid;
+    gap: .5em; 
+    padding: .5em;
+}
+
+.settings-card a {
+    padding: .3em 0;
+
+    text-decoration: none;
+}
+
+.settings-btn {
+    display: grid;
+    gap: .5em;
+}
