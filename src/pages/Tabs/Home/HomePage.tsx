@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonHeader, IonIcon, IonToolbar } from "@ionic/react";
+import { IonActionSheet, IonButton, IonContent, IonHeader, IonIcon, IonToolbar } from "@ionic/react";
 import flamme from '../../../assets/flame-outline.svg'
 import notif from '../../../assets/notifications-outline.svg'
 import heart from '../../../assets/heart.svg'
@@ -33,7 +33,7 @@ export default function HomePage() {
             <IonButton fill="outline" size="large" className="home-lareg-btn">
               <IonIcon icon={skip}></IonIcon>
             </IonButton>
-            <IonButton fill="outline" size="small" className="home-small-btn">
+            <IonButton id="open-action-sheet" fill="outline" size="small" className="home-small-btn">
               <IonIcon icon={alert}></IonIcon>
             </IonButton>
             <IonButton fill="outline" size="large" className="home-lareg-btn">
@@ -42,6 +42,34 @@ export default function HomePage() {
           </div>
         </div>
       </IonContent>
+
+      <IonActionSheet
+        trigger="open-action-sheet"
+        header="Actions"
+        buttons={[
+          {
+            text: 'Signaler',
+            role: 'destructive',
+            data: {
+              action: 'delete',
+            },
+          },
+          {
+            text: 'Bloquer',
+            role: 'destructive',
+            data: {
+              action: 'delete',
+            },
+          },
+          {
+            text: 'Annuler',
+            role: 'cancel',
+            data: {
+              action: 'cancel',
+            },
+          },
+        ]}
+      ></IonActionSheet>
     </>
   );
 }
