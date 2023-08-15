@@ -53,6 +53,15 @@
     gap: 10px;
 }
 
+.profil-details {
+    margin: 0 auto;
+    margin: .5em;
+}
+
+.profil-details ion-item {
+    padding: .5em 0;
+}
+
 .edit-content {
     padding-bottom: 2em;
 }
@@ -71,7 +80,7 @@
 .edit-card {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 
     gap: 20px;
 }

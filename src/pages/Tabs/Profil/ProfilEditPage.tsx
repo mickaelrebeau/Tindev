@@ -63,27 +63,6 @@ export default function ProfilPage() {
                   </IonButton>
                 </div>
               </div>
-              <div className="edit-card-img">
-                <div className="edit-card-btn">
-                  <IonButton className="edit-btn-icon" size="small" fill="solid">
-                    <IonIcon icon={add}></IonIcon>
-                  </IonButton>
-                </div>
-              </div>
-              <div className="edit-card-img">
-                <div className="edit-card-btn">
-                  <IonButton className="edit-btn-icon" size="small" fill="solid">
-                    <IonIcon icon={add}></IonIcon>
-                  </IonButton>
-                </div>
-              </div>
-              <div className="edit-card-img">
-                <div className="edit-card-btn">
-                  <IonButton className="edit-btn-icon" size="small" fill="solid">
-                    <IonIcon icon={add}></IonIcon>
-                  </IonButton>
-                </div>
-              </div>
             </div>
           </div>
           <div className="edit-content-input">
