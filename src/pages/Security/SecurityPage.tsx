@@ -1,6 +1,12 @@
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from "@ionic/react";
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonLabel, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from "@ionic/react";
+import { useState } from "react";
 
 export default function SecurityPage() {
+  const [selectedSegment, setSelectedSegment] = useState("all");
+
+  const handleSegmentChange = (event: CustomEvent) => {
+    setSelectedSegment(event.detail.value);
+  };
   return (
     <>
       <IonHeader>
@@ -9,13 +15,20 @@ export default function SecurityPage() {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/tabs/profil"></IonBackButton>
           </IonButtons>
-          <IonTitle> SecurityPage </IonTitle>
+          <IonTitle> Centre Sécurité </IonTitle>
         </IonToolbar>
 
       </IonHeader>
 
       <IonContent className="ion-padding">
-        <h2>Security</h2>
+        <IonSegment value={selectedSegment} onIonChange={handleSegmentChange}>
+            <IonSegmentButton value="favorites">
+              <IonLabel>Sécurité</IonLabel>
+            </IonSegmentButton>
+            <IonSegmentButton value="all">
+              <IonLabel>Resources</IonLabel>
+            </IonSegmentButton>
+          </IonSegment>
       </IonContent>
     </>
   );
