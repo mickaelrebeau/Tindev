@@ -7,7 +7,7 @@ export default function ProfilPage() {
     <>
       <IonHeader>
 
-        <IonToolbar>
+        <IonToolbar className="ion-padding-vertical">
           <IonButtons slot="start">
             <IonBackButton defaultHref="/tabs/profil"></IonBackButton>
           </IonButtons>
@@ -21,41 +21,6 @@ export default function ProfilPage() {
           <div className="edit-content-input">
             <h2>Média</h2>
             <div className="edit-card">
-              <div className="edit-card-img">
-                <div className="edit-card-btn">
-                  <IonButton className="edit-btn-icon" size="small" fill="solid">
-                    <IonIcon icon={add}></IonIcon>
-                  </IonButton>
-                </div>
-              </div>
-              <div className="edit-card-img">
-                <div className="edit-card-btn">
-                  <IonButton className="edit-btn-icon" size="small" fill="solid">
-                    <IonIcon icon={add}></IonIcon>
-                  </IonButton>
-                </div>
-              </div>
-              <div className="edit-card-img">
-                <div className="edit-card-btn">
-                  <IonButton className="edit-btn-icon" size="small" fill="solid">
-                    <IonIcon icon={add}></IonIcon>
-                  </IonButton>
-                </div>
-              </div>
-              <div className="edit-card-img">
-                <div className="edit-card-btn">
-                  <IonButton className="edit-btn-icon" size="small" fill="solid">
-                    <IonIcon icon={add}></IonIcon>
-                  </IonButton>
-                </div>
-              </div>
-              <div className="edit-card-img">
-                <div className="edit-card-btn">
-                  <IonButton className="edit-btn-icon" size="small" fill="solid">
-                    <IonIcon icon={add}></IonIcon>
-                  </IonButton>
-                </div>
-              </div>
               <div className="edit-card-img">
                 <div className="edit-card-btn">
                   <IonButton className="edit-btn-icon" size="small" fill="solid">

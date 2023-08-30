@@ -23,7 +23,7 @@
 
 .msg-card-match {
     width: 80px;
-    height: 140px;
+    height: 80px;
 
     background-color: rgb(224, 224, 224);
 
@@ -47,6 +47,10 @@
 
 .msg-item {
     padding: 1em 0;
+}
+
+.msg-img {
+    border-radius: 50%;
 }
 
 .msg-certif {

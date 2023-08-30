@@ -6,7 +6,7 @@ export default function NotificationsPage() {
     <>
       <IonHeader>
 
-        <IonToolbar>
+        <IonToolbar class="ion-padding-vertical">
           <IonButtons slot="start">
             <IonBackButton defaultHref="/tabs/home"></IonBackButton>
           </IonButtons>

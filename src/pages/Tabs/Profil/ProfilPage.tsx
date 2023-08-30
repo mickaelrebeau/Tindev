@@ -1,8 +1,13 @@
-import { IonButton, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonTitle, IonToolbar } from "@ionic/react";
+import { IonButton, IonChip, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonTitle, IonToolbar } from "@ionic/react";
 import flamme from '../../../assets/flame-outline.svg'
 import shield from '../../../assets/shield-half-outline.svg'
 import settings from '../../../assets/settings-outline.svg'
 import pen from '../../../assets/pencil-outline.svg'
+import github from '../../../assets/logo-github.svg'
+import google from '../../../assets/logo-google.svg'
+import twitter from '../../../assets/logo-twitter.svg'
+import twitch from '../../../assets/logo-twitch.svg'
+import insta from '../../../assets/logo-instagram.svg'
 import './Profil.css'
 
 export default function ProfilPage() {
@@ -37,8 +42,10 @@ export default function ProfilPage() {
               <IonIcon icon={pen}></IonIcon>
             </IonButton>
           </div>
-          <img className="profil-img" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-          <h2>Pseudo, Age</h2>
+          <div className="profil-header">
+            <h2>Pseudo</h2>
+            <img className="profil-img" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          </div>
         </div>
 
         <div className="profil-details">
@@ -50,6 +57,9 @@ export default function ProfilPage() {
               <IonLabel>Prénom</IonLabel>
             </IonItem>
             <IonItem>
+              <IonLabel>Age</IonLabel>
+            </IonItem>
+            <IonItem>
               <IonLabel>Poste</IonLabel>
             </IonItem>
             <IonItem>
@@ -59,7 +69,32 @@ export default function ProfilPage() {
               <IonLabel>Formation</IonLabel>
             </IonItem>
             <IonItem>
-              <IonLabel>Stack</IonLabel>
+              <IonLabel>Bio</IonLabel>
+            </IonItem>
+            <IonItem>
+              <div className="profil-skills">
+                <IonChip outline>Python</IonChip>
+                <IonChip outline>C</IonChip>
+                <IonChip outline>C#</IonChip>
+                <IonChip outline>C++</IonChip>
+                <IonChip outline>Java</IonChip>
+                <IonChip outline>PHP</IonChip>
+                <IonChip outline>Javascript</IonChip>
+                <IonChip outline>HTML</IonChip>
+                <IonChip outline>CSS</IonChip>
+                <IonChip outline>Go</IonChip>
+                <IonChip outline>Rust</IonChip>
+                <IonChip outline>Ruby</IonChip>
+              </div>
+            </IonItem>
+            <IonItem>
+              <div className="profil-socials">
+                <IonIcon size="large" icon={github} />
+                <IonIcon size="large" icon={google} />
+                <IonIcon size="large" icon={twitter} />
+                <IonIcon size="large" icon={insta} />
+                <IonIcon size="large" icon={twitch} />
+              </div>
             </IonItem>
           </IonList>
         </div>

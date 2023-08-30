@@ -2,7 +2,7 @@
     display: grid;
     gap: 1em;
 
-    margin-bottom: 2em;
+    padding-bottom: 6em;
 }
 
 .settings-card {
@@ -19,5 +19,5 @@
 
 .settings-btn {
     display: grid;
-    gap: .5em;
+    gap: .8em;
 }

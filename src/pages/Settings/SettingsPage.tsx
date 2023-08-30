@@ -6,7 +6,7 @@ export default function SettingsPage() {
     <>
       <IonHeader>
 
-        <IonToolbar>
+        <IonToolbar className="ion-padding-vertical">
           <IonButtons slot="start">
             <IonBackButton defaultHref="/tabs/profil"></IonBackButton>
           </IonButtons>
@@ -46,8 +46,8 @@ export default function SettingsPage() {
             </div>
           </div>
           <div className="settings-btn">
-            <IonButton expand="full" routerLink="/">Déconnexion</IonButton>
-            <IonButton id="open-action-sheet" expand="full">Supprimer votre Compte</IonButton>
+            <IonButton expand="block" color="danger" routerLink="/">Déconnexion</IonButton>
+            <IonButton id="open-action-sheet" fill="outline" color="danger" expand="block">Supprimer votre Compte</IonButton>
           </div>
         </div>
       </IonContent>

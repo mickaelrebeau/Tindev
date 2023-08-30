@@ -1,0 +1,22 @@
+.resources-content {
+    padding-bottom: 6em;
+
+    display: grid;
+
+    gap: 1em;
+}
+
+.resources-content div {
+    padding: .5em;
+}
+
+.resources-content div h2 {
+    font-size: 1.2rem;
+}
+
+.call {
+    display: flex;
+    align-items: center;
+
+    gap: 1em;
+}

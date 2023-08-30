@@ -45,7 +45,7 @@ export default function MessagesPage() {
           <IonList class="msg-list">
             <IonItem className="msg-item">
               <IonThumbnail slot="start">
-                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                <img className="msg-img" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
               </IonThumbnail>
               <div>
                 <IonLabel>
@@ -60,7 +60,7 @@ export default function MessagesPage() {
 
             <IonItem className="msg-item">
               <IonThumbnail slot="start">
-                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                <img className="msg-img" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
               </IonThumbnail>
               <div>
                 <IonLabel className="msg-certif">
