@@ -1,0 +1,28 @@
+.wrapper {
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px;
+}
+
+.center {
+  justify-content: center;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.title {
+  margin: 0;
+}
+
+.buttonsWrapper {
+  display: flex;
+}

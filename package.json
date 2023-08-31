@@ -1,5 +1,5 @@
 {
-  "name": "ionic-app-base",
+  "name": "tindev",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -25,6 +25,7 @@
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.5.0",
+    "clsx": "^2.0.0",
     "ionicons": "^7.1.2",
     "million": "^2.5.10",
     "react": "^18.2.0",
