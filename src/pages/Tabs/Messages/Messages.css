@@ -25,9 +25,13 @@
     width: 80px;
     height: 80px;
 
-    background-color: rgb(224, 224, 224);
+    background-color: rgb(91, 129, 255);
 
     border-radius: 10px;
+}
+
+.msg-card-match.empty {
+    background-color: rgb(224, 224, 224);
 }
 
 .msg-messages {
