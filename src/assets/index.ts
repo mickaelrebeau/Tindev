@@ -18,7 +18,7 @@ import IconSettings from "./settings-outline.svg";
 import IconPen from "./pencil-outline.svg";
 import IconMessages from "./chatbubbles-outline.svg";
 import IconHome from "./flame-outline.svg";
-import IconProfil from ".s/person-outline.svg";
+import IconProfil from "./person-outline.svg";
 
 export {
   IconGithub,
