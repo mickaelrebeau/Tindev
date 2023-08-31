@@ -34,18 +34,21 @@ export default function ProfilPage() {
 
       <IonContent className="ion-padding">
         <div className="profil-content">
-          <div className="profil-edit-btn">
-            <IonButton size="small" routerLink="/tabs/profil/edit">
-              <IonIcon icon={IconPen} />
-            </IonButton>
-          </div>
           <div className="profil-header">
             <h2>Pseudo</h2>
-            <img
-              className="profil-img"
-              alt="Silhouette of mountains"
-              src="https://ionicframework.com/docs/img/demos/card-media.png"
-            />
+            <div className="profil-avatar">
+              <img
+                alt="Silhouette of mountains"
+                src="https://ionicframework.com/docs/img/demos/card-media.png"
+              />
+              <IonButton
+                className="profil-edit-btn"
+                size="small"
+                routerLink="/tabs/profil/edit"
+              >
+                <IonIcon icon={IconPen} />
+              </IonButton>
+            </div>
           </div>
         </div>
 

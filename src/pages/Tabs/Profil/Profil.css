@@ -1,126 +1,130 @@
 .profil-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    padding: 10px;
+  padding: 10px;
 }
 
 .profil-logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .profil-header-btn {
-    display: flex;
+  display: flex;
 }
 
 .profil-content {
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 1em;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 1em;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-}
-
-.profil-edit-btn {
-    position: absolute;
-    top: -15px;
-    right: -15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .profil-header {
-    width: 100%;
+  width: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.profil-img {
+/* .profil-img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
+} */
+
+.profil-avatar {
+  position: relative;
+}
+.profil-avatar img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
 
-.profil-edit-btn > ion-button{
-    width: 40px;
-    height: 40px;
-    --border-radius: 50%;
+.profil-edit-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: -15px;
+  right: -15px;
+  --border-radius: 50%;
 }
 
 .profil-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .profil-details {
-    margin: 0 auto;
-    margin: .5em;
+  margin: 0 auto;
+  margin: 0.5em;
 
-    padding-bottom: 6em;
+  padding-bottom: 6em;
 }
 
 .profil-details ion-item {
-    padding: .5em 0;
+  padding: 0.5em 0;
 }
 
 .profil-skills {
-    height: 100%;
+  height: 100%;
 }
 
 .profil-socials {
-    display: flex;
+  display: flex;
 
-    gap: 10px;
+  gap: 10px;
 }
 
 .edit-content {
-    padding-bottom: 2em;
+  padding-bottom: 2em;
 }
 
 .edit-content-input {
-    margin-bottom: 3em;
+  margin-bottom: 3em;
 }
 
 .edit-content-input h2 {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 
-    font-size: 1.3rem;
-    font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .edit-card-img {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 
-    position: relative;
+  position: relative;
 
-    border: 3px dashed rgb(107, 107, 107);
-    border-radius: 10px;
+  border: 3px dashed rgb(107, 107, 107);
+  border-radius: 10px;
 
-    background-color: rgb(202, 202, 202);
+  background-color: rgb(202, 202, 202);
 }
 
 .edit-card-btn {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    transform: translate(20%, 20%);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(20%, 20%);
 }
 
 .edit-btn-icon {
-    margin: 0;
+  margin: 0;
 
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 
-    --border-radius: 50%;
+  --border-radius: 50%;
 }
