@@ -16,6 +16,9 @@ import IconNotif from "./notifications-outline.svg";
 import IconAdd from "./add-outline.svg";
 import IconSettings from "./settings-outline.svg";
 import IconPen from "./pencil-outline.svg";
+import IconMessages from "./chatbubbles-outline.svg";
+import IconHome from "./flame-outline.svg";
+import IconProfil from ".s/person-outline.svg";
 
 export {
   IconGithub,
@@ -36,4 +39,7 @@ export {
   IconNotif,
   IconSettings,
   IconPen,
+  IconMessages,
+  IconHome,
+  IconProfil,
 };
