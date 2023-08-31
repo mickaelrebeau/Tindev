@@ -1,18 +1,18 @@
 import { IonContent, IonHeader, IonTitle, IonToolbar } from "@ionic/react";
 
-export default function MessagesPage() {
+export default function MessagePage() {
   return (
     <>
       <IonHeader>
 
         <IonToolbar>
-          <IonTitle> MessagesPage </IonTitle>
+          <IonTitle> MessagePage </IonTitle>
         </IonToolbar>
 
       </IonHeader>
 
       <IonContent className="ion-padding">
-        <h2>Messages</h2>
+        <h2>Message</h2>
       </IonContent>
     </>
   );

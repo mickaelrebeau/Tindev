@@ -1,6 +1,6 @@
 import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonInput, IonTitle, IonToolbar } from "@ionic/react";
-import add from '../../../assets/add-outline.svg'
 import './Profil.css'
+import { IconAdd } from "../../../assets";
 
 export default function ProfilPage() {
   return (
@@ -24,7 +24,7 @@ export default function ProfilPage() {
               <div className="edit-card-img">
                 <div className="edit-card-btn">
                   <IonButton className="edit-btn-icon" size="small" fill="solid">
-                    <IonIcon icon={add}></IonIcon>
+                    <IonIcon icon={IconAdd} />
                   </IonButton>
                 </div>
               </div>

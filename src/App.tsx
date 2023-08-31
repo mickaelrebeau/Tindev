@@ -23,9 +23,10 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import Tabs from './services/utils/Tabs';
+import Tabs from './components/layout/Tabs';
 import SignPage from './pages/Sign/SignPage';
 import LoginPage from './pages/Sign/LoginPage';
+import NotFoundPage from './components/NotFoundPage';
 
 setupIonicReact();
 
@@ -40,6 +41,8 @@ const App: React.FC = () => (
         <Route path="/tabs">
           <Tabs />
         </Route>
+
+        {/* <Route path="*" component={NotFoundPage} /> */}
 
       </IonRouterOutlet>
     </IonReactRouter>

@@ -1,78 +1,93 @@
-import { IonActionSheet, IonButton, IonChip, IonContent, IonHeader, IonIcon, IonToolbar } from "@ionic/react";
-import flamme from '../../../assets/flame-outline.svg'
-import notif from '../../../assets/notifications-outline.svg'
-import heart from '../../../assets/heart.svg'
-import skip from '../../../assets/close.svg'
-import alert from '../../../assets/alert-outline.svg'
-import github from '../../../assets/logo-github.svg'
-import google from '../../../assets/logo-google.svg'
-import twitter from '../../../assets/logo-twitter.svg'
-import twitch from '../../../assets/logo-twitch.svg'
-import insta from '../../../assets/logo-instagram.svg'
-import './Home.css'
+import {
+  IonActionSheet,
+  IonButton,
+  IonChip,
+  IonContent,
+  IonIcon,
+} from "@ionic/react";
+import "./Home.css";
+import { Header } from "../../../components/layout/Header";
+import {
+  IconAlert,
+  IconGithub,
+  IconGoogle,
+  IconHeart,
+  IconInsta,
+  IconNotif,
+  IconSkip,
+  IconTwitch,
+  IconTwitter,
+} from "../../../assets";
 
 export default function HomePage() {
   return (
     <>
-      <IonHeader>
-
-        <IonToolbar>
-          <div className="home-header">
-            <div className="home-logo">
-              <IonIcon slot="start" size="large" icon={flamme}></IonIcon>
-              <h2>tindev</h2>
-            </div>
-
-            <IonButton fill="clear" size="large" routerLink="/tabs/home/notifications">
-              <IonIcon icon={notif}></IonIcon>
-            </IonButton>
-          </div>
-        </IonToolbar>
-
-      </IonHeader>
+      <Header>
+        <IonButton
+          fill="clear"
+          size="large"
+          routerLink="/tabs/home/notifications"
+        >
+          <IonIcon icon={IconNotif} />
+        </IonButton>
+      </Header>
 
       <IonContent className="ion-padding">
         <div className="home-content">
           <div className="home-card">
             <div className="home-card-title">
               <h2>Admin</h2>
-              <img className="home-img" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+              <img
+                className="home-img"
+                alt="Silhouette of mountains"
+                src="https://ionicframework.com/docs/img/demos/card-media.png"
+              />
             </div>
             <div className="home-card-text">
               <h3>Administrateur réseaux</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
             </div>
             <div className="home-labels">
-              <IonChip outline={true}>Python</IonChip>
-              <IonChip outline={true}>C</IonChip>
-              <IonChip outline={true}>C#</IonChip>
-              <IonChip outline={true}>C++</IonChip>
-              <IonChip outline={true}>Java</IonChip>
-              <IonChip outline={true}>PHP</IonChip>
-              <IonChip outline={true}>Javascript</IonChip>
-              <IonChip outline={true}>HTML</IonChip>
-              <IonChip outline={true}>CSS</IonChip>
-              <IonChip outline={true}>Go</IonChip>
-              <IonChip outline={true}>Rust</IonChip>
-              <IonChip outline={true}>Ruby</IonChip>
+              <IonChip outline>Python</IonChip>
+              <IonChip outline>C</IonChip>
+              <IonChip outline>C#</IonChip>
+              <IonChip outline>C++</IonChip>
+              <IonChip outline>Java</IonChip>
+              <IonChip outline>PHP</IonChip>
+              <IonChip outline>Javascript</IonChip>
+              <IonChip outline>HTML</IonChip>
+              <IonChip outline>CSS</IonChip>
+              <IonChip outline>Go</IonChip>
+              <IonChip outline>Rust</IonChip>
+              <IonChip outline>Ruby</IonChip>
             </div>
             <div className="home-socials">
-              <IonIcon size="large" icon={github} />
-              <IonIcon size="large" icon={google} />
-              <IonIcon size="large" icon={twitter} />
-              <IonIcon size="large" icon={insta} />
-              <IonIcon size="large" icon={twitch} />
+              <IonIcon size="large" icon={IconGithub} />
+              <IonIcon size="large" icon={IconGoogle} />
+              <IonIcon size="large" icon={IconTwitter} />
+              <IonIcon size="large" icon={IconInsta} />
+              <IonIcon size="large" icon={IconTwitch} />
             </div>
           </div>
           <div className="home-actions">
             <IonButton fill="outline" size="large" className="home-lareg-btn">
-              <IonIcon icon={skip} />
+              <IonIcon icon={IconSkip} />
             </IonButton>
-            <IonButton id="open-action-sheet" fill="outline" size="small" className="home-small-btn">
-              <IonIcon icon={alert} />
+            <IonButton
+              id="open-action-sheet"
+              fill="outline"
+              size="small"
+              className="home-small-btn"
+            >
+              <IonIcon icon={IconAlert} />
             </IonButton>
             <IonButton fill="outline" size="large" className="home-lareg-btn">
-              <IonIcon icon={heart} />
+              <IonIcon icon={IconHeart} />
             </IonButton>
           </div>
         </div>
@@ -83,24 +98,24 @@ export default function HomePage() {
         header="Actions"
         buttons={[
           {
-            text: 'Signaler',
-            role: 'destructive',
+            text: "Signaler",
+            role: "destructive",
             data: {
-              action: 'delete',
+              action: "delete",
             },
           },
           {
-            text: 'Bloquer',
-            role: 'destructive',
+            text: "Bloquer",
+            role: "destructive",
             data: {
-              action: 'delete',
+              action: "delete",
             },
           },
           {
-            text: 'Annuler',
-            role: 'cancel',
+            text: "Annuler",
+            role: "cancel",
             data: {
-              action: 'cancel',
+              action: "cancel",
             },
           },
         ]}

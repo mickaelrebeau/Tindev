@@ -1,10 +1,10 @@
-import { IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, } from "@ionic/react";
+import { IonIcon, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, } from "@ionic/react";
 import React from "react";
 import { Redirect, Route } from "react-router";
 
-import msg from '../../assets/chatbubbles-outline.svg';
-import home from '../../assets/flame-outline.svg';
-import profil from '../../assets/person-outline.svg';
+import IconMessages from '../../assets/chatbubbles-outline.svg';
+import IconHome from '../../assets/flame-outline.svg';
+import IconProfil from '../../assets/person-outline.svg';
 
 import MessagesPage from "../../pages/Tabs/Messages/MessagesPage";
 import ProfilPage from "../../pages/Tabs/Profil/ProfilPage";
@@ -39,15 +39,15 @@ import SettingsPage from "../../pages/Settings/SettingsPage";
         <IonTabBar slot="bottom">
   
           <IonTabButton tab="request" href="/tabs/messages">
-            <IonIcon aria-hidden="true" icon={msg} />
+            <IonIcon aria-hidden="true" icon={IconMessages} />
           </IonTabButton>
   
           <IonTabButton tab="home" href="/tabs/home">
-            <IonIcon aria-hidden="true" icon={home} />
+            <IonIcon aria-hidden="true" icon={IconHome} />
           </IonTabButton>
   
           <IonTabButton tab="profil" href="/tabs/profil">
-            <IonIcon aria-hidden="true" icon={profil} />
+            <IonIcon aria-hidden="true" icon={IconProfil} />
           </IonTabButton>
   
         </IonTabBar>
