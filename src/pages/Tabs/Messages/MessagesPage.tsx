@@ -1,17 +1,13 @@
-import {
-  IonButton,
-  IonContent,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonModal,
-  IonThumbnail,
-} from "@ionic/react";
+import { IonButton, IonContent, IonIcon, IonList } from "@ionic/react";
 import "./Messages.css";
 import { useRef } from "react";
 import { Header } from "../../../components/layout/Header";
-import { IconCertif, IconSend, IconShield } from "../../../assets";
+import { IconShield } from "../../../assets";
+import { SecurityModal } from "../../../components/modal/SecurityModal";
+import { matches, messages } from "../../../services/utils/data.temp";
+import { PreviewMessage } from "../../../components/message/PreviewMessage";
+import { LikesCard } from "../../../components/message/LikesCard";
+import { MatchCard } from "../../../components/message/MatchCard";
 
 export default function MessagesPage() {
   const modal = useRef<HTMLIonModalElement>(null);
@@ -28,10 +24,14 @@ export default function MessagesPage() {
         <div>
           <h2>Nouveaux Matchs</h2>
           <div className="msg-matchs">
-            <div className="msg-card-match" />
-            <div className="msg-card-match" />
-            <div className="msg-card-match" />
-            <div className="msg-card-match" />
+            <LikesCard />
+            {matches.map((match) => (
+              <MatchCard key={match.id} {...match} />
+            ))}
+            {matches.length < 3 &&
+              Array.from({ length: 3 - matches.length }, (_, i) => (
+                <MatchCard key={i} empty />
+              ))}
           </div>
         </div>
 
@@ -39,69 +39,14 @@ export default function MessagesPage() {
           <h2>Messages</h2>
 
           <IonList class="msg-list">
-            <IonItem className="msg-item">
-              <IonThumbnail slot="start">
-                <img
-                  className="msg-img"
-                  alt="Silhouette of mountains"
-                  src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                />
-              </IonThumbnail>
-              <div>
-                <IonLabel>
-                  <div className="msg-certif">
-                    L'équipe Tindev
-                    <IonIcon slot="end" icon={IconCertif}></IonIcon>
-                  </div>
-                </IonLabel>
-                <IonLabel className="msg-sending">
-                  Cela faisait un moment que vous...
-                </IonLabel>
-              </div>
-            </IonItem>
-
-            <IonItem className="msg-item">
-              <IonThumbnail slot="start">
-                <img
-                  className="msg-img"
-                  alt="Silhouette of mountains"
-                  src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-                />
-              </IonThumbnail>
-              <div>
-                <IonLabel className="msg-certif">Random</IonLabel>
-                <IonLabel>
-                  <div className="msg-sending">
-                    <IonIcon slot="start" icon={IconSend}></IonIcon>
-                    Hello comment tu vas ?
-                  </div>
-                </IonLabel>
-              </div>
-            </IonItem>
+            {messages.map((message) => (
+              <PreviewMessage key={message.id} {...message} />
+            ))}
           </IonList>
         </div>
       </IonContent>
 
-      <IonModal
-        ref={modal}
-        trigger="open-modal"
-        initialBreakpoint={0.25}
-        breakpoints={[0, 0.25]}
-      >
-        <IonContent className="ion-padding">
-          <h2>Sécurité</h2>
-          <IonButton
-            fill="clear"
-            size="large"
-            routerLink="/tabs/profil/security"
-          >
-            <IonIcon slot="start" size="large" icon={IconShield}></IonIcon>
-            <div className="msg-modal">
-              <h2>Paramètres de sécurité</h2>
-            </div>
-          </IonButton>
-        </IonContent>
-      </IonModal>
+      <SecurityModal ref={modal} />
     </>
   );
 }

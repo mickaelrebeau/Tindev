@@ -13,6 +13,7 @@ import HomePage from "../../pages/Tabs/Home/HomePage";
 import NotificationsPage from "../../pages/Tabs/Home/NotificationsPage";
 import SecurityPage from "../../pages/Security/SecurityPage";
 import SettingsPage from "../../pages/Settings/SettingsPage";
+import MessagePage from "../../pages/Message/MessagePage";
   
   
   const Tabs: React.FC = () => {
@@ -21,6 +22,7 @@ import SettingsPage from "../../pages/Settings/SettingsPage";
         <IonRouterOutlet>
 
           <Route exact path="/tabs/messages" component={MessagesPage} />
+          <Route exact path="/tabs/message/:id" component={MessagePage} />
   
           <Route exact path="/tabs/home" component={HomePage} />
           <Route exact path="/tabs/home/notifications" component={NotificationsPage} />
@@ -31,7 +33,7 @@ import SettingsPage from "../../pages/Settings/SettingsPage";
           <Route exact path="/tabs/profil/settings" component={SettingsPage} />
     
           <Route exact path="/tabs">
-            <Redirect to="/tabs/home"></Redirect>
+            <Redirect to="/tabs/home" />
           </Route>
   
         </IonRouterOutlet>
