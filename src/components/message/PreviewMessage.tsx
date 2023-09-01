@@ -17,7 +17,7 @@ export function PreviewMessage({
       </IonThumbnail>
       <div>
         <IonLabel>
-          <div className={styles.itecertifm}>
+          <div className={styles.certif}>
             <h3>{title}</h3>
             {certif && <IonIcon slot="end" icon={IconCertif} />}
           </div>
