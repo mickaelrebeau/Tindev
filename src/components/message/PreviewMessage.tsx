@@ -1,5 +1,6 @@
 import { IonIcon, IonItem, IonLabel, IonThumbnail } from "@ionic/react";
 import { IconCertif, IconSend } from "../../assets";
+import styles from "./Match.module.css";
 
 export function PreviewMessage({
   id,
@@ -10,18 +11,18 @@ export function PreviewMessage({
   content,
 }: Message) {
   return (
-    <IonItem className="msg-item" href={`/tabs/message/${id}`}>
+    <IonItem className={styles.item} href={`/tabs/message/${id}`}>
       <IonThumbnail slot="start">
-        <img className="msg-img" alt="Image of the message" src={srcImg} />
+        <img className={styles.img} alt="Image of the message" src={srcImg} />
       </IonThumbnail>
       <div>
         <IonLabel>
-          <div className="msg-certif">
+          <div className={styles.itecertifm}>
             <h3>{title}</h3>
             {certif && <IonIcon slot="end" icon={IconCertif} />}
           </div>
         </IonLabel>
-        <IonLabel className="msg-sending">
+        <IonLabel className={styles.sending}>
           {send && <IonIcon slot="start" icon={IconSend} />}
           <span>{content}</span>
         </IonLabel>

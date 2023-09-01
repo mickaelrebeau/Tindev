@@ -5,7 +5,7 @@ import {
   IonContent,
   IonIcon,
 } from "@ionic/react";
-import "./Home.css";
+import styles from "./Home.module.css";
 import { Header } from "../../../components/layout/Header";
 import {
   IconAlert,
@@ -33,17 +33,17 @@ export default function HomePage() {
       </Header>
 
       <IonContent className="ion-padding">
-        <div className="home-content">
-          <div className="home-card">
-            <div className="home-card-title">
+        <div className={styles.content}>
+          <div className={styles.card}>
+            <div className={styles.cardTitle}>
               <h2>Admin</h2>
               <img
-                className="home-img"
+                className={styles.img}
                 alt="Silhouette of mountains"
                 src="https://ionicframework.com/docs/img/demos/card-media.png"
               />
             </div>
-            <div className="home-card-text">
+            <div className={styles.cardText}>
               <h3>Administrateur réseaux</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -52,7 +52,7 @@ export default function HomePage() {
                 nisi ut aliquip ex ea commodo consequat.
               </p>
             </div>
-            <div className="home-labels">
+            <div className={styles.labels}>
               <IonChip outline>Python</IonChip>
               <IonChip outline>C</IonChip>
               <IonChip outline>C#</IonChip>
@@ -66,7 +66,7 @@ export default function HomePage() {
               <IonChip outline>Rust</IonChip>
               <IonChip outline>Ruby</IonChip>
             </div>
-            <div className="home-socials">
+            <div className={styles.socials}>
               <IonIcon size="large" icon={IconGithub} />
               <IonIcon size="large" icon={IconGoogle} />
               <IonIcon size="large" icon={IconTwitter} />
@@ -74,19 +74,19 @@ export default function HomePage() {
               <IonIcon size="large" icon={IconTwitch} />
             </div>
           </div>
-          <div className="home-actions">
-            <IonButton fill="outline" size="large" className="home-lareg-btn">
+          <div className={styles.actions}>
+            <IonButton fill="outline" size="large">
               <IonIcon icon={IconSkip} />
             </IonButton>
             <IonButton
               id="open-action-sheet"
               fill="outline"
               size="small"
-              className="home-small-btn"
+              className={styles.smallBtn}
             >
               <IonIcon icon={IconAlert} />
             </IonButton>
-            <IonButton fill="outline" size="large" className="home-lareg-btn">
+            <IonButton fill="outline" size="large">
               <IonIcon icon={IconHeart} />
             </IonButton>
           </div>

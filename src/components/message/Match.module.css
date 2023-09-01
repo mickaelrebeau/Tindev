@@ -1,0 +1,39 @@
+.match-box {
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+.cardMatch {
+  width: 80px;
+  height: 80px;
+
+  background-color: rgb(91, 129, 255);
+
+  border-radius: 10px;
+}
+
+.cardMatch.empty {
+  background-color: rgb(224, 224, 224);
+}
+
+.item {
+  padding: 1em 0;
+}
+
+.img {
+  border-radius: 50%;
+}
+
+.certif {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sending {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 8px 0;
+}

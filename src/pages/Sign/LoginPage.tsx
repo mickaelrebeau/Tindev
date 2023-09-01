@@ -16,20 +16,13 @@ import { InputChangeEventDetail, IonInputCustomEvent } from "@ionic/core";
 
 import { useState } from "react";
 
-import "./Sign.css";
+import styles from "./Sign.module.css";
 import { IconFlamme } from "../../assets";
-
-// !Remove duplicate
 
 export default function LoginPage() {
   const [selectedSegment, setSelectedSegment] = useState("all");
 
-  const [handleLogin, setHandleLogin] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [handleSignUp, setHandleSignUp] = useState({
+  const [user, setUser] = useState({
     email: "",
     password: "",
   });
@@ -41,7 +34,7 @@ export default function LoginPage() {
   const handleSubmitLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log(handleLogin);
+    console.log(user);
   };
 
   const handleSubmitSignUp = async (
@@ -49,21 +42,14 @@ export default function LoginPage() {
   ) => {
     event.preventDefault();
 
-    console.log(handleSignUp);
+    console.log(user);
   };
 
-  const handleChangeLogin = (
+  const handleChange = (
     event: IonInputCustomEvent<InputChangeEventDetail>
   ) => {
     const { name, value }: HTMLIonInputElement = event.target;
-    setHandleLogin({ ...handleLogin, [name]: value });
-  };
-
-  const handleChangeSignUp = (
-    event: IonInputCustomEvent<InputChangeEventDetail>
-  ) => {
-    const { name, value }: HTMLIonInputElement = event.target;
-    setHandleSignUp({ ...handleSignUp, [name]: value });
+    setUser({ ...user, [name]: value });
   };
 
   return (
@@ -72,7 +58,7 @@ export default function LoginPage() {
         <IonButtons slot="start">
           <IonBackButton defaultHref="/" />
         </IonButtons>
-        <div className="sign-logo">
+        <div className={styles.logo}>
           <IonIcon slot="start" size="large" icon={IconFlamme} />
           <h2>tindev</h2>
         </div>
@@ -89,14 +75,14 @@ export default function LoginPage() {
         </IonSegment>
 
         {selectedSegment === "favorites" && (
-          <div className="center-form">
+          <div className={styles.form}>
             <form onSubmit={handleSubmitSignUp}>
               <IonItem>
                 <IonInput
-                  onIonInput={(e) => handleChangeSignUp(e)}
+                  onIonInput={(e) => handleChange(e)}
                   label="Email"
                   labelPlacement="floating"
-                  value={handleSignUp.email}
+                  value={user.email}
                 />
               </IonItem>
 
@@ -109,11 +95,11 @@ export default function LoginPage() {
 
               <IonItem>
                 <IonInput
-                  onIonInput={(e) => handleChangeSignUp(e)}
+                  onIonInput={(e) => handleChange(e)}
                   id="custom-input"
                   label="Mot de passe"
                   labelPlacement="floating"
-                  value={handleSignUp.password}
+                  value={user.password}
                 />
               </IonItem>
 
@@ -124,41 +110,41 @@ export default function LoginPage() {
                 />
               </IonItem>
 
-              <IonCheckbox className="checkbox" labelPlacement="end">
+              <IonCheckbox className={styles.checkbox} labelPlacement="end">
                 Accepter les termes et conditions d'utilisations
               </IonCheckbox>
 
-              <IonButton className="custom-button" routerLink="/tabs/home">
+              <IonButton className={styles.customButton} routerLink="/tabs/home">
                 S'inscrire
               </IonButton>
             </form>
           </div>
         )}
         {selectedSegment === "all" && (
-          <div className="center-form">
+          <div className={styles.form}>
             <form onSubmit={handleSubmitLogin}>
               <IonItem>
                 <IonInput
-                  onIonInput={(e) => handleChangeLogin(e)}
+                  onIonInput={(e) => handleChange(e)}
                   label="Email"
                   labelPlacement="floating"
                   name="email"
-                  value={handleLogin.email}
+                  value={user.email}
                 />
               </IonItem>
 
               <IonItem>
                 <IonInput
-                  onIonInput={(e) => handleChangeLogin(e)}
+                  onIonInput={(e) => handleChange(e)}
                   id="custom-input"
                   label="Mot de passe"
                   labelPlacement="floating"
                   name="password"
-                  value={handleLogin.password}
+                  value={user.password}
                 />
               </IonItem>
 
-              <IonButton className="custom-button" routerLink="/tabs/home">
+              <IonButton className={styles.customButton} routerLink="/tabs/home">
                 Se connecter
               </IonButton>
             </form>

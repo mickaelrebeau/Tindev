@@ -1,25 +1,11 @@
-.home-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 10px;
-}
-
-.home-logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.home-content {
+.content {
     margin-top: 1em;
 
     display: flex;
     flex-direction: column;
 }
 
-.home-card {
+.card {
     height: 580px;
     padding: 0 .5em;
 
@@ -34,26 +20,11 @@
     border-radius: 10px;
 }
 
-.home-card h2 {
+.card h2 {
     font-size: 2rem;
 }
 
-.home-card-text h3 {
-    width: 95%;
-    margin: 0 auto;
-
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
-.home-card-text p {
-    margin: 0;
-    padding: .5em;
-
-    line-height: 20px;
-}
-
-.home-card-title {
+.cardTitle {
     width: 100%;
 
     display: flex;
@@ -63,14 +34,29 @@
     padding: .5em;
 }
 
-.home-img {
+.cardText h3 {
+    width: 95%;
+    margin: 0 auto;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.cardText p {
+    margin: 0;
+    padding: .5em;
+
+    line-height: 20px;
+}
+
+.img {
     width: 60px;
     height: 60px;
 
     border-radius: 50%;
 }
 
-.home-socials {
+.socials {
     width: 100%;
 
     display: flex;
@@ -81,7 +67,7 @@
     padding: .5em;
 }
 
-.home-actions {
+.actions {
     margin: .4em auto;
     display: flex;
     align-items: center;
@@ -89,21 +75,14 @@
     gap: 25px;
 }
 
-.home-actions > ion-button {
+.actions > ion-button {
     height: auto;
     --border-radius: 50%;
 }
 
-.home-small-btn {
+.smallBtn {
     --padding-start: 10px;
     --padding-top: 10px;
     --padding-bottom: 10px;
     --padding-end: 10px;
-}
-
-.home-large-btn {
-    --padding-start: 15px;
-    --padding-top: 15px;
-    --padding-bottom: 15px;
-    --padding-end: 15px;
 }

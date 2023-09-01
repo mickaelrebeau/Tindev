@@ -1,5 +1,5 @@
 import { IonActionSheet, IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from "@ionic/react";
-import './Settings.css';
+import styles from './Settings.module.css';
 
 export default function SettingsPage() {
   return (
@@ -16,23 +16,23 @@ export default function SettingsPage() {
       </IonHeader>
 
       <IonContent className="ion-padding">
-        <div className="settings-content">
+        <div className={styles.content}>
           <div>
             <h2>Notifications</h2>
-            <div className="settings-card">
+            <div className={styles.card}>
               <a>Adresse e-mail</a>
               <a>Notification Push</a>
             </div>
           </div>
           <div>
             <h2>Contacte-nous</h2>
-            <div className="settings-card">
+            <div className={styles.card}>
               <a>Aide et assitance</a>
             </div>
           </div>
           <div>
             <h2>Confidentialités</h2>
-            <div className="settings-card">
+            <div className={styles.card}>
               <a>Politique relative aux cookies</a>
               <a>Politique de confidentialité</a>
               <a>Préférences de confidentialité</a>
@@ -40,12 +40,12 @@ export default function SettingsPage() {
           </div>
           <div>
             <h2>Mentions légales</h2>
-            <div className="settings-card">
+            <div className={styles.card}>
               <a>Licenses</a>
               <a>Conditions d'utilisation</a>
             </div>
           </div>
-          <div className="settings-btn">
+          <div className={styles.btn}>
             <IonButton expand="block" color="danger" routerLink="/">Déconnexion</IonButton>
             <IonButton id="open-action-sheet" fill="outline" color="danger" expand="block">Supprimer votre Compte</IonButton>
           </div>

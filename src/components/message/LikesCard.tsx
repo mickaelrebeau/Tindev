@@ -1,5 +1,5 @@
 import { IonButton } from "@ionic/react";
-import "./Match.css";
+import styles from "./Match.module.css";
 import { matches } from "../../services/utils/data.temp";
 
 export function LikesCard() {
@@ -10,7 +10,7 @@ export function LikesCard() {
   return (
     <IonButton fill="clear" className="match-box" href="/tabs/home">
       {numberOfLikes === 0 ? (
-        <div className="msg-card-match" />
+        <div className={styles.cardMatch} />
       ) : (
         `${numberOfLikes} likes`
       )}

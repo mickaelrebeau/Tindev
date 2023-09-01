@@ -1,5 +1,4 @@
 import { IonBackButton, IonBadge, IonButtons, IonContent, IonHeader, IonItem, IonLabel, IonTitle, IonToolbar } from "@ionic/react";
-import './Home.css'
 
 export default function NotificationsPage() {
   return (

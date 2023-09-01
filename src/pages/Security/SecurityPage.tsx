@@ -10,7 +10,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import { useState } from "react";
-import "./Security.css";
+import styles from "./Security.module.css";
 import { Resource } from "../../components/security/Resource";
 
 export default function SecurityPage() {
@@ -41,7 +41,7 @@ export default function SecurityPage() {
         </IonSegment>
 
         {selectedSegment === "favorites" && (
-          <div className="resources-content">
+          <div className={styles.content}>
             <Resource
               title="Stop Violences Femmes"
               phoneNumber="0 800 05 95 95"

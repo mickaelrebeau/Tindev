@@ -1,4 +1,6 @@
-.profil-header {
+.header {
+  width: 100%;
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6,13 +8,13 @@
   padding: 10px;
 }
 
-.profil-logo {
+.logo {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.profil-header-btn {
+.headerBtn {
   display: flex;
 }
 
@@ -27,30 +29,22 @@
   justify-content: center;
 }
 
-.profil-header {
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 /* .profil-img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
 } */
 
-.profil-avatar {
+.avatar {
   position: relative;
 }
-.profil-avatar img {
+.avatar img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
 }
 
-.profil-edit-btn {
+.profilEditBtn {
   position: absolute;
   width: 40px;
   height: 40px;
@@ -59,49 +53,49 @@
   --border-radius: 50%;
 }
 
-.profil-title {
+.title {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.profil-details {
+.details {
   margin: 0 auto;
   margin: 0.5em;
 
   padding-bottom: 6em;
 }
 
-.profil-details ion-item {
+.details ion-item {
   padding: 0.5em 0;
 }
 
-.profil-skills {
+.skills {
   height: 100%;
 }
 
-.profil-socials {
+.socials {
   display: flex;
 
   gap: 10px;
 }
 
-.edit-content {
+.editContent {
   padding-bottom: 2em;
 }
 
-.edit-content-input {
+.editContentInput {
   margin-bottom: 3em;
 }
 
-.edit-content-input h2 {
+.editContentInput h2 {
   margin-bottom: 1em;
 
   font-size: 1.3rem;
   font-weight: 600;
 }
 
-.edit-card-img {
+.editCardImg {
   width: 100px;
   height: 100px;
 
@@ -113,14 +107,14 @@
   background-color: rgb(202, 202, 202);
 }
 
-.edit-card-btn {
+.editCardBtn {
   position: absolute;
   bottom: 0;
   right: 0;
   transform: translate(20%, 20%);
 }
 
-.edit-btn-icon {
+.editBtnIcon {
   margin: 0;
 
   width: 40px;

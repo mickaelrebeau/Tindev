@@ -1,5 +1,6 @@
 import { IonButton, IonIcon } from "@ionic/react";
 import { IconCall } from "../../assets";
+import styles from './Ressource.module.css';
 
 type Props = {
   title: string;
@@ -12,7 +13,7 @@ export function Resource({ title, phoneNumber, link }: Props) {
     <>
       <h2>{title}</h2>
       {phoneNumber && (
-        <div className="call">
+        <div className={styles.call}>
           <IonIcon size="small" icon={IconCall} />
           <p>{phoneNumber}</p>
         </div>

@@ -7,7 +7,7 @@ import {
   IonLabel,
   IonList,
 } from "@ionic/react";
-import "./Profil.css";
+import styles from "./Profil.module.css";
 import { Header } from "../../../components/layout/Header";
 import {
   IconGithub,
@@ -33,16 +33,16 @@ export default function ProfilPage() {
       </Header>
 
       <IonContent className="ion-padding">
-        <div className="profil-content">
-          <div className="profil-header">
+        <div className={styles.content}>
+          <div className={styles.header}>
             <h2>Pseudo</h2>
-            <div className="profil-avatar">
+            <div className={styles.avatar}>
               <img
                 alt="Silhouette of mountains"
                 src="https://ionicframework.com/docs/img/demos/card-media.png"
               />
               <IonButton
-                className="profil-edit-btn"
+                className={styles.profilEditBtn}
                 size="small"
                 routerLink="/tabs/profil/edit"
               >
@@ -52,7 +52,7 @@ export default function ProfilPage() {
           </div>
         </div>
 
-        <div className="profil-details">
+        <div className={styles.details}>
           <IonList lines="inset">
             <IonItem>
               <IonLabel>Nom de famille</IonLabel>
@@ -76,7 +76,7 @@ export default function ProfilPage() {
               <IonLabel>Bio</IonLabel>
             </IonItem>
             <IonItem>
-              <div className="profil-skills">
+              <div className={styles.skills}>
                 <IonChip outline>Python</IonChip>
                 <IonChip outline>C</IonChip>
                 <IonChip outline>C#</IonChip>
@@ -92,7 +92,7 @@ export default function ProfilPage() {
               </div>
             </IonItem>
             <IonItem>
-              <div className="profil-socials">
+              <div className={styles.socials}>
                 <IonIcon size="large" icon={IconGithub} />
                 <IonIcon size="large" icon={IconGoogle} />
                 <IonIcon size="large" icon={IconTwitter} />

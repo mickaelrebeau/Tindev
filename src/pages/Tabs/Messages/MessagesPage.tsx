@@ -1,5 +1,5 @@
 import { IonButton, IonContent, IonIcon, IonList } from "@ionic/react";
-import "./Messages.css";
+import styles from "./Messages.module.css";
 import { useRef } from "react";
 import { Header } from "../../../components/layout/Header";
 import { IconShield } from "../../../assets";
@@ -23,7 +23,7 @@ export default function MessagesPage() {
       <IonContent className="ion-padding">
         <div>
           <h2>Nouveaux Matchs</h2>
-          <div className="msg-matchs">
+          <div className={styles.matchs}>
             <LikesCard />
             {matches.map((match) => (
               <MatchCard key={match.id} {...match} />
@@ -35,10 +35,10 @@ export default function MessagesPage() {
           </div>
         </div>
 
-        <div className="msg-messages">
+        <div className={styles.messages}>
           <h2>Messages</h2>
 
-          <IonList class="msg-list">
+          <IonList class={styles.list}>
             {messages.map((message) => (
               <PreviewMessage key={message.id} {...message} />
             ))}
