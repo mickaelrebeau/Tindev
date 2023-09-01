@@ -8,7 +8,7 @@ export function LikesCard() {
   // ! Récupérer l'image du dernier like
 
   return (
-    <IonButton fill="clear" className="match-box" href="/tabs/home">
+    <IonButton fill="clear" className={styles.box} href="/tabs/home">
       {numberOfLikes === 0 ? (
         <div className={styles.cardMatch} />
       ) : (

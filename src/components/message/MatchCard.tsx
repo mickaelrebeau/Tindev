@@ -12,16 +12,18 @@ type ResultMatch = Match & {
 type Props = EmptyMatch | ResultMatch;
 
 export function MatchCard(props: Props) {
+ const stylesCombine = styles.cardMatch+ " " +styles.empty
+
   if (props.empty) {
     return (
-      <IonButton fill="clear" disabled className="match-box">
-        <div className={styles.cardMatch && styles.empty} />
+      <IonButton fill="clear" disabled className={styles.box}>
+        <div className={stylesCombine} />
       </IonButton>
     );
   }
 
   return (
-    <IonButton fill="clear" className="match-box" href={props.link}>
+    <IonButton fill="clear" className={styles.box} href={props.link}>
       <div className={styles.cardMatch} />
     </IonButton>
   );
