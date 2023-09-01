@@ -31,7 +31,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^5.3.4",
-    "react-router-dom": "^5.3.4"
+    "react-router-dom": "^5.3.4",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -48,5 +49,9 @@
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
     "vitest": "^0.32.2"
-  }
+  },
+  "description": "- Swipe\r - Messages\r - Profil\r - Auth\r ---",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
