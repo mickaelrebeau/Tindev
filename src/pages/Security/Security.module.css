@@ -2,14 +2,7 @@
     padding-bottom: 6em;
 
     display: grid;
-
+    justify-items: start;
+    
     gap: 1em;
-}
-
-.content div {
-    padding: .5em;
-}
-
-.content div h2 {
-    font-size: 1.2rem;
 }
