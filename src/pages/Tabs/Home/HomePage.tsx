@@ -1,25 +1,121 @@
 import {
+  GestureDetail,
   IonActionSheet,
   IonButton,
-  IonChip,
   IonContent,
   IonIcon,
+  createGesture,
+  Animation,
+  createAnimation,
+  Gesture,
 } from "@ionic/react";
 import styles from "./Home.module.css";
 import { Header } from "../../../components/layout/Header";
-import {
-  IconAlert,
-  IconGithub,
-  IconGoogle,
-  IconHeart,
-  IconInsta,
-  IconNotif,
-  IconSkip,
-  IconTwitch,
-  IconTwitter,
-} from "../../../assets";
+import { IconAlert, IconHeart, IconNotif, IconSkip } from "../../../assets";
+import { CardWithRef } from "../../../components/card/Card";
+import { useEffect, useRef } from "react";
 
 export default function HomePage() {
+  // https://ionicframework.com/docs/utilities/animations#gesture-animations
+  const cardRef = useRef<HTMLDivElement>(null);
+  const animationToRight = useRef<Animation | null>(null);
+  const animationToLeft = useRef<Animation | null>(null);
+  const gesture = useRef<Gesture | null>(null);
+  const initialStep = useRef(0);
+
+  const MAX_TRANSLATE = 344 - 100 - 32;
+
+  useEffect(() => {
+    if (!cardRef.current) return;
+
+    if (!animationToRight.current) {
+      gesture.current = createGesture({
+        el: cardRef.current,
+        threshold: 0,
+        onStart: () => onStart(),
+        onMove: (detail) => onMove(detail),
+        onEnd: (detail) => onEnd(detail),
+        gestureName: "example",
+      });
+      gesture.current.enable(true);
+
+      animationToRight.current = createAnimation()
+        .addElement(cardRef.current)
+        .duration(1000)
+        .fromTo(
+          "transform",
+          "translateX(0px) rotate(0)",
+          "translateX(100%) rotate(45deg"
+        );
+
+      animationToLeft.current = createAnimation()
+        .addElement(cardRef.current)
+        .duration(1000)
+        .fromTo(
+          "transform",
+          "translateX(0px) rotate(0)",
+          "translateX(-100%) rotate(-45deg"
+        );
+    }
+  }, [cardRef]);
+
+  const clamp = (min: number, n: number, max: number) => {
+    return Math.max(min, Math.min(n, max));
+  };
+
+  const getStep = (ev: GestureDetail) => {
+    const delta = initialStep.current + ev.deltaX;
+    return clamp(0, delta / MAX_TRANSLATE, 1);
+  };
+
+  const onStart = () => {
+    if (!cardRef.current) return;
+    if (!animationToRight.current) return;
+    if (!animationToLeft.current) return;
+
+    cardRef.current.classList.remove(styles.swapYes, styles.swapNo);
+    cardRef.current.classList.add(styles.dragging);
+
+    animationToLeft.current.stop();
+    animationToRight.current.stop();
+  };
+
+  const onMove = (detail: GestureDetail) => {
+    // if (!animation.current) return;
+    // if (!started.current) {
+    //   animation.current.progressStart();
+    //   started.current = true;
+    // }
+    // animation.current.progressStep(getStep(detail));
+    // animation.current!.progressStep(getStep(ev));
+  };
+
+  const onEnd = (detail: GestureDetail) => {
+    const { deltaX } = detail;
+    if (!gesture.current) return;
+    if (!animationToRight.current) return;
+    if (!animationToLeft.current) return;
+    if (!cardRef.current) return;
+
+    // gesture.current.enable(true);
+
+    cardRef.current?.classList.remove(styles.dragging);
+
+    if (deltaX >= 200) {
+      cardRef.current.classList.add(styles.swapYes);
+      // animationToRight.current.progressStart(true, 1);
+      animationToRight.current.progressEnd(1, 1);
+      return;
+    }
+
+    if (deltaX <= -200) {
+      cardRef.current.classList.add(styles.swapNo);
+      // animationToLeft.current.progressStart(true, 1);
+      animationToLeft.current.progressEnd(1, 1);
+      return;
+    }
+  };
+
   return (
     <>
       <Header>
@@ -34,46 +130,7 @@ export default function HomePage() {
 
       <IonContent className="ion-padding">
         <div className={styles.content}>
-          <div className={styles.card}>
-            <div className={styles.cardTitle}>
-              <h2>Admin</h2>
-              <img
-                className={styles.img}
-                alt="Silhouette of mountains"
-                src="https://ionicframework.com/docs/img/demos/card-media.png"
-              />
-            </div>
-            <div className={styles.cardText}>
-              <h3>Administrateur réseaux</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-            <div className={styles.labels}>
-              <IonChip outline>Python</IonChip>
-              <IonChip outline>C</IonChip>
-              <IonChip outline>C#</IonChip>
-              <IonChip outline>C++</IonChip>
-              <IonChip outline>Java</IonChip>
-              <IonChip outline>PHP</IonChip>
-              <IonChip outline>Javascript</IonChip>
-              <IonChip outline>HTML</IonChip>
-              <IonChip outline>CSS</IonChip>
-              <IonChip outline>Go</IonChip>
-              <IonChip outline>Rust</IonChip>
-              <IonChip outline>Ruby</IonChip>
-            </div>
-            <div className={styles.socials}>
-              <IonIcon size="large" icon={IconGithub} />
-              <IonIcon size="large" icon={IconGoogle} />
-              <IonIcon size="large" icon={IconTwitter} />
-              <IonIcon size="large" icon={IconInsta} />
-              <IonIcon size="large" icon={IconTwitch} />
-            </div>
-          </div>
+          <CardWithRef ref={cardRef} />
           <div className={styles.actions}>
             <IonButton fill="outline" size="large">
               <IonIcon icon={IconSkip} />
