@@ -5,68 +5,6 @@
     flex-direction: column;
 }
 
-.card {
-    height: 580px;
-    padding: 0 .5em;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 1em;
-
-    background-color: #4b4b4b;
-    border-radius: 10px;
-}
-
-.card h2 {
-    font-size: 2rem;
-}
-
-.cardTitle {
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: .5em;
-}
-
-.cardText h3 {
-    width: 95%;
-    margin: 0 auto;
-
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
-.cardText p {
-    margin: 0;
-    padding: .5em;
-
-    line-height: 20px;
-}
-
-.img {
-    width: 60px;
-    height: 60px;
-
-    border-radius: 50%;
-}
-
-.socials {
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-
-    padding: .5em;
-}
-
 .actions {
     margin: .4em auto;
     display: flex;
@@ -85,4 +23,8 @@
     --padding-top: 10px;
     --padding-bottom: 10px;
     --padding-end: 10px;
+}
+
+.animate {
+    border: 1px solid red;
 }

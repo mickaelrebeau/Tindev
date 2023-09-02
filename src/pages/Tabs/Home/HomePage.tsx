@@ -1,25 +1,66 @@
 import {
+  GestureDetail,
   IonActionSheet,
   IonButton,
-  IonChip,
   IonContent,
   IonIcon,
+  Animation,
+  createAnimation,
+  createGesture,
+  Gesture,
 } from "@ionic/react";
 import styles from "./Home.module.css";
-import { Header } from "../../../components/layout/Header";
+import { Header } from "@/components/layout/Header";
 import {
   IconAlert,
-  IconGithub,
-  IconGoogle,
   IconHeart,
-  IconInsta,
   IconNotif,
   IconSkip,
-  IconTwitch,
-  IconTwitter,
-} from "../../../assets";
+} from "@/assets";
+
+import { useEffect, useRef } from "react";
+import { Card } from "@/components/card/Card";
 
 export default function HomePage() {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const animation = useRef<Animation | null>(null);
+  const gesture = useRef<Gesture | null>(null);
+  const started = useRef<boolean>(false);
+
+  useEffect(() => {
+    if (animation.current === null) {
+      animation.current = createAnimation()
+        .addElement(cardRef.current!)
+        .duration(1000)
+        .fromTo("transform", "translateX(-500px)", "translateX(500px)");
+
+      gesture.current = createGesture({
+        el: cardRef.current!,
+        gestureName: "exemple",
+        onStart: () => onStart(),
+        onMove: (e) => onMove(e),
+        onEnd: () => onEnd(),
+      });
+
+      gesture.current.enable(true);
+    }
+  }, [cardRef]);
+
+  const onStart = () => {
+    cardRef.current?.classList.add(styles.animate);
+  }
+
+  const onMove = (e: GestureDetail) => {
+    const { type, currentX, deltaX, velocityX } = e;
+    console.log({ type, currentX, deltaX, velocityX });
+    animation.current!.progressStart();
+    started.current = true;
+  }
+
+  const onEnd = () => {
+    cardRef.current?.classList.remove(styles.animate);
+  }
+
   return (
     <>
       <Header>
@@ -34,46 +75,9 @@ export default function HomePage() {
 
       <IonContent className="ion-padding">
         <div className={styles.content}>
-          <div className={styles.card}>
-            <div className={styles.cardTitle}>
-              <h2>Admin</h2>
-              <img
-                className={styles.img}
-                alt="Silhouette of mountains"
-                src="https://ionicframework.com/docs/img/demos/card-media.png"
-              />
-            </div>
-            <div className={styles.cardText}>
-              <h3>Administrateur réseaux</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-            <div className={styles.labels}>
-              <IonChip outline>Python</IonChip>
-              <IonChip outline>C</IonChip>
-              <IonChip outline>C#</IonChip>
-              <IonChip outline>C++</IonChip>
-              <IonChip outline>Java</IonChip>
-              <IonChip outline>PHP</IonChip>
-              <IonChip outline>Javascript</IonChip>
-              <IonChip outline>HTML</IonChip>
-              <IonChip outline>CSS</IonChip>
-              <IonChip outline>Go</IonChip>
-              <IonChip outline>Rust</IonChip>
-              <IonChip outline>Ruby</IonChip>
-            </div>
-            <div className={styles.socials}>
-              <IonIcon size="large" icon={IconGithub} />
-              <IonIcon size="large" icon={IconGoogle} />
-              <IonIcon size="large" icon={IconTwitter} />
-              <IonIcon size="large" icon={IconInsta} />
-              <IonIcon size="large" icon={IconTwitch} />
-            </div>
-          </div>
+
+          <Card ref={cardRef}/>
+
           <div className={styles.actions}>
             <IonButton fill="outline" size="large">
               <IonIcon icon={IconSkip} />
