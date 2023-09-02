@@ -54,8 +54,8 @@ export function Card() {
   );
 }
 
-export const CardWithRef = forwardRef<HTMLDivElement, {}>((_props, ref) => (
+export const CardWithRef = forwardRef<HTMLDivElement, {}>((props, ref) => (
   <div ref={ref}>
-    <Card />
+    <Card {...props} />
   </div>
 ));
