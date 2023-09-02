@@ -1,13 +1,8 @@
 import {
-  GestureDetail,
   IonActionSheet,
   IonButton,
   IonContent,
   IonIcon,
-  Animation,
-  createAnimation,
-  createGesture,
-  Gesture,
 } from "@ionic/react";
 import styles from "./Home.module.css";
 import { Header } from "@/components/layout/Header";
@@ -17,50 +12,36 @@ import {
   IconNotif,
   IconSkip,
 } from "@/assets";
+import Card  from "@/components/card/Card";
+import { useState } from "react";
+import TinderCard from 'react-tinder-card'
 
-import { useEffect, useRef } from "react";
-import { Card } from "@/components/card/Card";
 
 export default function HomePage() {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const animation = useRef<Animation | null>(null);
-  const gesture = useRef<Gesture | null>(null);
-  const started = useRef<boolean>(false);
+  const [isLike, setIsLike] = useState(false);
 
-  useEffect(() => {
-    if (animation.current === null) {
-      animation.current = createAnimation()
-        .addElement(cardRef.current!)
-        .duration(1000)
-        .fromTo("transform", "translateX(-500px)", "translateX(500px)");
+  const onSwipe = (direction: string) => {
+    console.log('You swiped: ' + direction)
 
-      gesture.current = createGesture({
-        el: cardRef.current!,
-        gestureName: "exemple",
-        onStart: () => onStart(),
-        onMove: (e) => onMove(e),
-        onEnd: () => onEnd(),
-      });
-
-      gesture.current.enable(true);
+    if (direction === 'right') {
+      setIsLike(true)
     }
-  }, [cardRef]);
 
-  const onStart = () => {
-    cardRef.current?.classList.add(styles.animate);
+    if (direction === 'left') {
+      setIsLike(false)
+    }
+
+    console.log(isLike);
+  }
+  
+  const onCardLeftScreen = (myIdentifier: string) => {
+    console.log(myIdentifier + ' left the screen')
   }
 
-  const onMove = (e: GestureDetail) => {
-    const { type, currentX, deltaX, velocityX } = e;
-    console.log({ type, currentX, deltaX, velocityX });
-    animation.current!.progressStart();
-    started.current = true;
+  const swipe = async (direction: string) => {
+    swipe(direction)
   }
-
-  const onEnd = () => {
-    cardRef.current?.classList.remove(styles.animate);
-  }
-
+  
   return (
     <>
       <Header>
@@ -76,10 +57,16 @@ export default function HomePage() {
       <IonContent className="ion-padding">
         <div className={styles.content}>
 
-          <Card ref={cardRef}/>
+          <TinderCard 
+            onSwipe={onSwipe} 
+            onCardLeftScreen={() => onCardLeftScreen('card')} 
+            preventSwipe={['up', 'down']}
+          >
+            <Card />
+          </TinderCard>
 
           <div className={styles.actions}>
-            <IonButton fill="outline" size="large">
+            <IonButton onClick={() => swipe('left')} fill="outline" size="large">
               <IonIcon icon={IconSkip} />
             </IonButton>
             <IonButton
@@ -90,7 +77,7 @@ export default function HomePage() {
             >
               <IonIcon icon={IconAlert} />
             </IonButton>
-            <IonButton fill="outline" size="large">
+            <IonButton onClick={() => swipe('right')} fill="outline" size="large">
               <IonIcon icon={IconHeart} />
             </IonButton>
           </div>
