@@ -31,11 +31,11 @@
 }
 
 .swapYes {
-  outline: 3px solid green;
+  outline: 5px solid green;
   border-radius: 10px;
 }
 
 .swapNo {
-  outline: 3px solid red;
+  outline: 5px solid red;
   border-radius: 10px;
 }

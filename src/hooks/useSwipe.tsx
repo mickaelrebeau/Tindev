@@ -12,6 +12,7 @@ type Props<T> = {
   cbOnMove?: (detail: GestureDetail, ref: React.RefObject<T>) => void;
   cbOnEnd?: (detail: GestureDetail, ref: React.RefObject<T>) => void;
   animationDuration?: number;
+  gestureName?: string;
 };
 
 // https://ionicframework.com/docs/utilities/animations#gesture-animations
@@ -21,6 +22,7 @@ export function useSwipe<T extends Element>({
   cbOnMove = () => {},
   cbOnEnd = () => {},
   animationDuration = 700,
+  gestureName = "swipe",
 }: Props<T>) {
   const ref = useRef<T>(null);
   const animationToRight = useRef<Animation | null>(null);
@@ -34,10 +36,10 @@ export function useSwipe<T extends Element>({
       gesture.current = createGesture({
         el: ref.current,
         threshold: 0,
-        onStart: (detail) => onStart(detail),
-        onMove: (detail) => onMove(detail),
-        onEnd: (detail) => onEnd(detail),
-        gestureName: "example",
+        onStart,
+        onMove,
+        onEnd,
+        gestureName,
       });
       gesture.current.enable(true);
 
