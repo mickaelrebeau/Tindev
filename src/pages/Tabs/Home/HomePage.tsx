@@ -40,14 +40,6 @@ export default function HomePage() {
   const swipe = async (direction: string) => {
     if (cardRef.current) {
       cardRef.current.swipe(direction)
-
-      if (direction === 'right') {
-        setIsLike(true)
-      }
-  
-      if (direction === 'left') {
-        setIsLike(false)
-      }
     }
   }
 
