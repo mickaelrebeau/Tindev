@@ -1,4 +1,4 @@
-import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonInput, IonTitle, IonToolbar } from "@ionic/react";
+import { IonBackButton, IonButton, IonButtons, IonContent, IonDatetime, IonHeader, IonIcon, IonInput, IonItem, IonList, IonSelect, IonSelectOption, IonTitle, IonToolbar } from "@ionic/react";
 import styles from './Profil.module.css';
 import { IconAdd } from "../../../assets";
 
@@ -48,15 +48,61 @@ export default function ProfilPage() {
           </div>
           <div className={styles.editContentInput}>
             <h2>Age</h2>
-            <IonInput label="99" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
+            <IonDatetime
+              presentation="date"
+              display-format="DD MMM YYYY"
+              display-timezone="utc"></IonDatetime>
           </div>
           <div className={styles.editContentInput}>
             <h2>Niveau d'études</h2>
-            <IonInput label="Licence" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
+            <IonList>
+              <IonItem>
+                <IonSelect aria-label="etude" placeholder="Selectionnez votre niveau d'études" multiple={true}>
+                  <IonSelectOption value="none">Ne souhaite pas le renseigner</IonSelectOption>
+                  <IonSelectOption value="bac">Bac</IonSelectOption>
+                  <IonSelectOption value="bts">BTS</IonSelectOption>
+                  <IonSelectOption value="dut">DUT</IonSelectOption>
+                  <IonSelectOption value="license">Licence</IonSelectOption>
+                  <IonSelectOption value="master">Master</IonSelectOption>
+                  <IonSelectOption value="doctorat">Doctorat</IonSelectOption>
+                </IonSelect>
+              </IonItem>
+            </IonList>
           </div>
           <div className={styles.editContentInput}>
             <h2>Mes langues</h2>
-            <IonInput label="Français, Anglais" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
+            <IonList>
+              <IonItem>
+                <IonSelect aria-label="languages" placeholder="Selectionnez votre niveau d'études" multiple={true}>
+                  <IonSelectOption value="none">Ne souhaite pas le renseigner</IonSelectOption>
+                  <IonSelectOption value="fr">Français</IonSelectOption>
+                  <IonSelectOption value="en">Anglais</IonSelectOption>
+                  <IonSelectOption value="es">Espagnol</IonSelectOption>
+                </IonSelect>
+              </IonItem>
+            </IonList>
+          </div>
+          <div className={styles.editContentInput}>
+            <h2>Mes languages de programmation</h2>
+            <IonList>
+              <IonItem>
+                <IonSelect aria-label="programmation" placeholder="Selectionnez votre niveau d'études" multiple={true}>
+                  <IonSelectOption value="none">Ne souhaite pas le renseigner</IonSelectOption>
+                  <IonSelectOption value="python">Python</IonSelectOption>
+                  <IonSelectOption value="c">C</IonSelectOption>
+                  <IonSelectOption value="c#">C#</IonSelectOption>
+                  <IonSelectOption value="c++">c++</IonSelectOption>
+                  <IonSelectOption value="java">Java</IonSelectOption>
+                  <IonSelectOption value="php">PHP</IonSelectOption>
+                  <IonSelectOption value="javascript">Javascript</IonSelectOption>
+                  <IonSelectOption value="html">HTML</IonSelectOption>
+                  <IonSelectOption value="css">CSS</IonSelectOption>
+                  <IonSelectOption value="go">GO</IonSelectOption>
+                  <IonSelectOption value="rust">Rust</IonSelectOption>
+                  <IonSelectOption value="ruby">Ruby</IonSelectOption>
+                </IonSelect>
+              </IonItem>
+            </IonList>
           </div>
           <div className={styles.editContentInput}>
             <h2>Poste</h2>
@@ -76,19 +122,27 @@ export default function ProfilPage() {
           </div>
           <div className={styles.editContentInput}>
             <h2>Github</h2>
-            <IonInput label="https://github.com/mickaelrebeau" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
+            <IonInput label="mickaelrebeau" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
           </div>
           <div className={styles.editContentInput}>
-            <h2>Portfolio</h2>
-            <IonInput label="https://mickaelrebeau.github.io/Portfolio-React/" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
+            <h2>Twitter</h2>
+            <IonInput label="mike_dreeman" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
           </div>
           <div className={styles.editContentInput}>
-            <h2>Autre Site</h2>
-            <IonInput label="URL..." labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
+            <h2>Instagram</h2>
+            <IonInput label="mike_photocollection" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
+          </div>
+          <div className={styles.editContentInput}>
+            <h2>Twitch</h2>
+            <IonInput label="Mike_Dreeman" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
           </div>
           <div className={styles.editContentInput}>
             <h2>Discord</h2>
             <IonInput label="mike_dreeman" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
+          </div>
+          <div className={styles.editContentInput}>
+            <h2>Portfolio</h2>
+            <IonInput label="https://mickaelrebeau.github.io/Portfolio-React/" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
           </div>
         </div>
       </IonContent>

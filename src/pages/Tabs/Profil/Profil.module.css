@@ -18,26 +18,10 @@
   display: flex;
 }
 
-.profil-content {
-  width: 85%;
-  margin: 0 auto;
-  margin-top: 1em;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* .profil-img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-} */
-
 .avatar {
   position: relative;
 }
+
 .avatar img {
   width: 70px;
   height: 70px;
