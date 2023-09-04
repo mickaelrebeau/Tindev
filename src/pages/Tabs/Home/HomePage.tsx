@@ -13,12 +13,13 @@ import {
   IconSkip,
 } from "@/assets";
 import Card  from "@/components/card/Card";
-import { useState } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import TinderCard from 'react-tinder-card'
 
 
 export default function HomePage() {
-  const [isLike, setIsLike] = useState(false);
+  const [isLike, setIsLike] = useState<boolean>();
+  const cardRef: RefObject<any> = useRef()
 
   const onSwipe = (direction: string) => {
     console.log('You swiped: ' + direction)
@@ -30,8 +31,6 @@ export default function HomePage() {
     if (direction === 'left') {
       setIsLike(false)
     }
-
-    console.log(isLike);
   }
   
   const onCardLeftScreen = (myIdentifier: string) => {
@@ -39,8 +38,22 @@ export default function HomePage() {
   }
 
   const swipe = async (direction: string) => {
-    swipe(direction)
+    if (cardRef.current) {
+      cardRef.current.swipe(direction)
+
+      if (direction === 'right') {
+        setIsLike(true)
+      }
+  
+      if (direction === 'left') {
+        setIsLike(false)
+      }
+    }
   }
+
+  useEffect(() => {
+    console.log(isLike);
+  }, [isLike])
   
   return (
     <>
@@ -58,6 +71,7 @@ export default function HomePage() {
         <div className={styles.content}>
 
           <TinderCard 
+            ref={cardRef}          
             onSwipe={onSwipe} 
             onCardLeftScreen={() => onCardLeftScreen('card')} 
             preventSwipe={['up', 'down']}
