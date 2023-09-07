@@ -3,20 +3,24 @@ import styles from "./Home.module.css";
 import { Header } from "@/components/layout/Header";
 import { IconAlert, IconHeart, IconNotif, IconSkip } from "@/assets";
 import Card from "@/components/card/Card";
-import { RefObject, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import TinderCard from "react-tinder-card";
 
+// https://github.com/3DJakob/react-tinder-card-demo/blob/master/src/examples/Advanced.js
 export default function HomePage() {
-  const [isLike, setIsLike] = useState<boolean | undefined>();
-  const cardRef: RefObject<any> = useRef();
+  const [isLike, setIsLike] = useState<boolean>();
 
-  const onSwipe = (direction: string) => setIsLike(direction === "right");
+  const cardRef = useRef<Tinder.API>(null);
 
-  const onCardLeftScreen = (myIdentifier: string) => {
-    console.log(myIdentifier + " left the screen");
+  const onSwipe: Tinder.SwipeHandler = (direction) => {
+    setIsLike(direction === "right");
   };
 
-  const swipe = async (direction: string) => {
+  const onCardLeftScreen: Tinder.CardLeftScreenHandler = () => {
+    console.log("Card left the screen");
+  };
+
+  const swipe = async (direction: Tinder.Direction) => {
     if (cardRef.current) {
       cardRef.current.swipe(direction);
     }
@@ -39,9 +43,8 @@ export default function HomePage() {
           <TinderCard
             ref={cardRef}
             onSwipe={onSwipe}
-            onCardLeftScreen={() => onCardLeftScreen("card")}
+            onCardLeftScreen={onCardLeftScreen}
             preventSwipe={["up", "down"]}
-            swipeRequirementType="velocity"
           >
             <Card />
           </TinderCard>
