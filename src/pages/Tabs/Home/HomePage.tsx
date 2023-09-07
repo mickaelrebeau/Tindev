@@ -1,52 +1,27 @@
-import {
-  IonActionSheet,
-  IonButton,
-  IonContent,
-  IonIcon,
-} from "@ionic/react";
+import { IonActionSheet, IonButton, IonContent, IonIcon } from "@ionic/react";
 import styles from "./Home.module.css";
 import { Header } from "@/components/layout/Header";
-import {
-  IconAlert,
-  IconHeart,
-  IconNotif,
-  IconSkip,
-} from "@/assets";
-import Card  from "@/components/card/Card";
-import { RefObject, useEffect, useRef, useState } from "react";
-import TinderCard from 'react-tinder-card'
-
+import { IconAlert, IconHeart, IconNotif, IconSkip } from "@/assets";
+import Card from "@/components/card/Card";
+import { RefObject, useRef, useState } from "react";
+import TinderCard from "react-tinder-card";
 
 export default function HomePage() {
-  const [isLike, setIsLike] = useState<boolean>();
-  const cardRef: RefObject<any> = useRef()
+  const [isLike, setIsLike] = useState<boolean | undefined>();
+  const cardRef: RefObject<any> = useRef();
 
-  const onSwipe = (direction: string) => {
-    console.log('You swiped: ' + direction)
+  const onSwipe = (direction: string) => setIsLike(direction === "right");
 
-    if (direction === 'right') {
-      setIsLike(true)
-    }
-
-    if (direction === 'left') {
-      setIsLike(false)
-    }
-  }
-  
   const onCardLeftScreen = (myIdentifier: string) => {
-    console.log(myIdentifier + ' left the screen')
-  }
+    console.log(myIdentifier + " left the screen");
+  };
 
   const swipe = async (direction: string) => {
     if (cardRef.current) {
-      cardRef.current.swipe(direction)
+      cardRef.current.swipe(direction);
     }
-  }
+  };
 
-  useEffect(() => {
-    console.log(isLike);
-  }, [isLike])
-  
   return (
     <>
       <Header>
@@ -61,18 +36,22 @@ export default function HomePage() {
 
       <IonContent className="ion-padding">
         <div className={styles.content}>
-
-          <TinderCard 
-            ref={cardRef}          
-            onSwipe={onSwipe} 
-            onCardLeftScreen={() => onCardLeftScreen('card')} 
-            preventSwipe={['up', 'down']}
+          <TinderCard
+            ref={cardRef}
+            onSwipe={onSwipe}
+            onCardLeftScreen={() => onCardLeftScreen("card")}
+            preventSwipe={["up", "down"]}
+            swipeRequirementType="velocity"
           >
             <Card />
           </TinderCard>
 
           <div className={styles.actions}>
-            <IonButton onClick={() => swipe('left')} fill="outline" size="large">
+            <IonButton
+              onClick={() => swipe("left")}
+              fill="outline"
+              size="large"
+            >
               <IonIcon icon={IconSkip} />
             </IonButton>
             <IonButton
@@ -83,7 +62,11 @@ export default function HomePage() {
             >
               <IonIcon icon={IconAlert} />
             </IonButton>
-            <IonButton onClick={() => swipe('right')} fill="outline" size="large">
+            <IonButton
+              onClick={() => swipe("right")}
+              fill="outline"
+              size="large"
+            >
               <IonIcon icon={IconHeart} />
             </IonButton>
           </div>
