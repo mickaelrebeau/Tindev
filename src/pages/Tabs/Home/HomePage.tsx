@@ -3,15 +3,34 @@ import styles from "./Home.module.css";
 import { Header } from "@/components/layout/Header";
 import { IconAlert, IconHeart, IconNotif, IconSkip } from "@/assets";
 import Card from "@/components/card/Card";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import TinderCard from "react-tinder-card";
-import { useSwipe } from "@/hooks/useSwipe";
+import { useSwipeArray } from "@/hooks/useSwipeArray";
 
+type Profile = { id: number; name: string };
+const data: Profile[] = [
+  { id: 0, name: "Mike" },
+  { id: 1, name: "Rayn" },
+  { id: 2, name: "Snox" },
+  { id: 3, name: "Forth" },
+];
+
+// https://github.com/3DJakob/react-tinder-card-demo/blob/master/src/examples/Advanced.js
 export default function HomePage() {
+  const [profiles, setProfiles] = useState<Profile[]>(data);
   const [isLike, setIsLike] = useState<boolean>();
+  const actionsRef = useRef<HTMLIonButtonElement>(null);
 
-  const [cardRef, { onSwipe, onCardLeftScreen, swipe }] = useSwipe({
-    onSwipeCb: (direction) => setIsLike(direction === "right"),
+  const [setRef, { onSwipe, onCardLeftScreen, swipe }] = useSwipeArray({
+    size: profiles.length,
+    onCardLeftScreenCb: (direction) => {
+      if (direction === "down") {
+        actionsRef.current?.click();
+        return;
+      }
+      // call api
+      setIsLike(direction === "right");
+    },
   });
 
   return (
@@ -28,15 +47,22 @@ export default function HomePage() {
 
       <IonContent className="ion-padding">
         <div className={styles.content}>
-          <TinderCard
-            ref={cardRef}
-            onSwipe={onSwipe}
-            onCardLeftScreen={onCardLeftScreen}
-            preventSwipe={["up", "down"]}
-          >
-            <Card />
-          </TinderCard>
-
+          <div className={styles.swipesWrapper}>
+            {profiles.map((profile, i) => (
+              <TinderCard
+                key={profile.id}
+                flickOnSwipe={false}
+                // swipeThreshold={0.25}
+                ref={setRef(i)}
+                onSwipe={onSwipe}
+                onCardLeftScreen={onCardLeftScreen}
+                preventSwipe={["up"]}
+                className={styles.swipe}
+              >
+                <Card name={profile.name} />
+              </TinderCard>
+            ))}
+          </div>
           <div className={styles.actions}>
             <IonButton
               onClick={() => swipe("left")}
@@ -46,6 +72,7 @@ export default function HomePage() {
               <IonIcon icon={IconSkip} />
             </IonButton>
             <IonButton
+              ref={actionsRef}
               id="open-action-sheet"
               fill="outline"
               size="small"
@@ -90,7 +117,7 @@ export default function HomePage() {
             },
           },
         ]}
-      ></IonActionSheet>
+      />
     </>
   );
 }
